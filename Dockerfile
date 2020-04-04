@@ -1,10 +1,11 @@
-FROM ubuntu:18.10
+FROM ubuntu:18.04
 
 MAINTAINER EbichanOO
 
 # 初めの呪文
-RUN apt-get update && apt-get install -y \
-    git
+RUN apt-get -y update \
+    && apt-get -y upgrade \
+    && apt-get install -y git
 
 # 各環境変数を設定
 ENV USER worker
