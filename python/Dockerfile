@@ -10,10 +10,6 @@ RUN pip install --upgrade pip && \
     pip install tensorflow && \
     pip install torch torchvision
 
-# requirements needs near by this dockerfile
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD [ "python", "./your-daemon-or-script.py" ]
+# When you run this image, you better to do
+# "docker run -it -v /your/program:/usr/src/workdir ~~:latest"
+CMD [ "/bin/bash" ]
