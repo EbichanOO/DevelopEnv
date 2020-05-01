@@ -1,8 +1,14 @@
-FROM python:3.8
+FROM continuumio/anaconda3:2020.02
+# python 3.7.6: conda 4.8.2
 
 MAINTAINER EbichanOO
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/workdir
+
+# update any pip library and install tensor & torch
+RUN pip install --upgrade pip && \
+    pip install tensorflow && \
+    pip install torch torchvision
 
 # requirements needs near by this dockerfile
 COPY requirements.txt ./
