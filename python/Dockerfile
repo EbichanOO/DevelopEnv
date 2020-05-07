@@ -11,5 +11,6 @@ RUN pip install --upgrade pip && \
     pip install torch torchvision
 
 # When you run this image, you better to do
-# "docker run -it -v /your/program:/usr/src/workdir ~~:latest"
+#   "docker run -it -v /your/program_folder:/usr/src/workdir ~~:latest"
+# If you use Docker toolbox, you almost need to enable your program folder.
 CMD [ "/bin/bash" ]
